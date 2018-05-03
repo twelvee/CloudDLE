@@ -8,10 +8,14 @@ use Routing\Router;
 use Routing\MatchedRoute;
 
 try {
-	echoheader($cdle['title'], $cdle['description']);
-
+	
     $router = new Router(GET_HTTP_HOST()."/".$config['admin_path']."?mod=cloud");
     $router->add('main', '/', 'AdminController:mainAction');
+    $router->add('modules', '&action=modules', 'ModulesController:mainAction');
+    $router->add('CRUD', '&action=crud', 'CrudController:mainAction');
+    $router->add('composer', '&action=composer', 'ComposerController:mainAction', 'GET|POST');
+    $router->add('settings', '&action=settings', 'AdminController:settingsAction');
+    $router->add('composer_ajax', '&action=composer&ajaxaccepter', 'ComposerController:ajaxAction', 'POST');
     /*
     $router->add('about', '/about', 'AppController:aboutAction');
     $router->add('contacts', '/contacts', 'AppController:contactsAction');
@@ -27,7 +31,6 @@ try {
 
     call_user_func_array(array(new $class($router), $action), $route->getParameters());
 
-    echofooter();
 
 } catch (Exception $e) {
 

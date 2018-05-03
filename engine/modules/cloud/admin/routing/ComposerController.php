@@ -1,8 +1,8 @@
 <?php
-
+require_once ROOT_DIR.'/symfony-shell.php';
 use Routing\Router;
 
-class AdminController
+class ComposerController
 {
     /**
      * @var \Routing\Router
@@ -18,30 +18,27 @@ class AdminController
     {
         global $cdle;
         echoheader($cdle['title'], $cdle['description']);
-        echo self::render('main');
+        if(isset($_POST['send'])){
+            $output = array();
+            exec($_POST['command'], $output);
+            foreach ($output as $key => $value) {
+                echo $value."<br>";
+            }
+        }
+        echo self::render('composer');
         echofooter();
     }
+        
+    public function ajaxAction(){
 
-    public function settingsAction()
-    {
-        global $cdle;
-        echoheader($cdle['title'], $cdle['description']);
-        echo self::render('settings');
-        echofooter();
-    }
+        $composer_dir = '/home/ziryanov/dle';
+        putenv("COMPOSER_HOME=$composer_dir");
+        $command = ROOT_DIR."/composer.phar require fenom\fenom 2>&1";
 
-    public function error404Action()
-    {
-        global $cdle;
-        header("HTTP/1.0 404 Not Found");
-        echoheader($cdle['title'], $cdle['description']);
-        echo self::render('error404');
-        echofooter();
-    }
-
-    protected function request($data)
-    {
-        echo $data;
+        ob_start();
+        system($command);
+        $output = ob_get_clean();
+        var_dump($output);
     }
 
     protected function render($template, array $vars = array())
