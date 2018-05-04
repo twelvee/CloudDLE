@@ -12,10 +12,9 @@ try {
     $router = new Router(GET_HTTP_HOST()."/".$config['admin_path']."?mod=cloud");
     $router->add('main', '/', 'AdminController:mainAction');
     $router->add('modules', '&action=modules', 'ModulesController:mainAction');
-    $router->add('CRUD', '&action=crud', 'CrudController:mainAction');
-    $router->add('composer', '&action=composer', 'ComposerController:mainAction', 'GET|POST');
+    $router->add('installed_modules', '&action=modules&installed', 'ModulesController:installedAction');
     $router->add('settings', '&action=settings', 'AdminController:settingsAction');
-    $router->add('composer_ajax', '&action=composer&ajaxaccepter', 'ComposerController:ajaxAction', 'POST');
+
     /*
     $router->add('about', '/about', 'AppController:aboutAction');
     $router->add('contacts', '/contacts', 'AppController:contactsAction');

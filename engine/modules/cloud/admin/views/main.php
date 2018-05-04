@@ -7,23 +7,15 @@
 			<div class="panel panel-default" style="width:260px;display: inline-block;margin-right: 30px;margin-left: 35px;">
 					<img src="https://cdn4.buysellads.net/uu/1/3332/1524773157-62676.jpeg">
 				<div class="panel-footer">
-					Установка модулей
+					Каталог модулей
 				</div>
 			</div>
 		</a>
-		<a href="?mod=cloud&action=crud">
+		<a href="?mod=cloud&action=modules&installed">
 			<div class="panel panel-default" style="width:260px;display: inline-block;margin-right: 30px;margin-left: 35px;">
 					<img src="https://cdn4.buysellads.net/uu/1/3332/1524773157-62676.jpeg">
 				<div class="panel-footer">
-					CRUD-система
-				</div>
-			</div>
-		</a>
-		<a href="?mod=cloud&action=composer">
-			<div class="panel panel-default" style="width:260px;display: inline-block;margin-right: 30px;margin-left: 35px;">
-					<img src="https://cdn4.buysellads.net/uu/1/3332/1524773157-62676.jpeg">
-				<div class="panel-footer">
-					DLE-Composer
+					Установленные модули
 				</div>
 			</div>
 		</a>
@@ -31,7 +23,15 @@
 			<div class="panel panel-default" style="width:260px;display: inline-block;margin-right: 30px;margin-left: 35px;">
 					<img src="https://cdn4.buysellads.net/uu/1/3332/1524773157-62676.jpeg">
 				<div class="panel-footer">
-					Настройки Cloud-DLE
+					Настройки Livedle
+				</div>
+			</div>
+		</a>
+		<a href="https://livedle.ru/" target="_blank">
+			<div class="panel panel-default" style="width:260px;display: inline-block;margin-right: 30px;margin-left: 35px;">
+					<img src="https://cdn4.buysellads.net/uu/1/3332/1524773157-62676.jpeg">
+				<div class="panel-footer">
+					Добавить свой модуль
 				</div>
 			</div>
 		</a>

@@ -1,9 +1,9 @@
 <?php
 $cdle = array(
-	'title'=>'Cloud DLE',
+	'title'=>'Livedle',
 	'autor'=>'Twelvee',
-	'website'=>'https://cloud-dle.ru/',
+	'website'=>'https://livedle.ru/',
 	'autor_blog'=>'https://ziryanov.net/',
 	'version'=>'1.0',
-	'description'=>'DLE Cloud moduling platform',
+	'description'=>'Livedle. Moduling system.',
 );
